@@ -1,0 +1,53 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\zgyx_dev01\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D rollup-plugin-vue
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\zgyx_dev01\AppData\Local\Microsoft\WindowsApps;;C:\Users\zgyx_dev01\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\zgyx_dev01\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ETIMEDOUT 104.16.20.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1146:16)
+
+npm manifest: 
+  {
+    "name": "imooc-datav-libs-dev",
+    "version": "1.0.0",
+    "description": "imooc datav components library",
+    "main": "index.js",
+    "scripts": {
+      "dev": "rollup -wc rollup.config.dev.js",
+      "bulid": "rollup -c rollup.config.dev.js",
+      "bulid:prod": "rollup -c rollup.config.prod.js"
+    },
+    "keywords": [],
+    "author": "Zhao",
+    "license": "ISC",
+    "devDependencies": {
+      "rollup": "^2.50.5",
+      "rollup-plugin-babel": "^4.4.0",
+      "rollup-plugin-commonjs": "^10.1.0",
+      "rollup-plugin-json": "^4.0.0",
+      "rollup-plugin-node-resolve": "^5.2.0",
+      "rollup-plugin-terser": "^7.0.2"
+    },
+    "dependencies": {
+      "@babel/core": "^7.14.3",
+      "@babel/preset-env": "^7.14.4",
+      "sam-test-data": "0.0.5"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

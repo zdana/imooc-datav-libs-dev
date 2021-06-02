@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>imooc datav libs example</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0-beta.15/dist/vue.global.js"></script>
+  <script src="../dist/imooc.datav.js"></script>
+</head>
+<body>
+  <div id="app">{{message}}</div>
+  <script>
+    Vue.createApp({
+      setup(){
+        var message='hello,world!'
+        return{
+          message
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
