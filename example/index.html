@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
   <title>imooc datav libs example</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@3.0.0-beta.15/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.1.0-beta.7/dist/vue.global.js"></script>
   <script src="../dist/imooc.datav.js"></script>
 </head>
+
 <body>
-  <div id="app">{{message}}</div>
+  <div id="app">{{message}}
+    <test-component></test-component>
+  </div>
   <script>
     Vue.createApp({
-      setup(){
-        var message='hello,world!'
-        return{
+      setup() {
+        var message = 'hello,world!'
+        return {
           message
         }
       }
-    }).mount('#app')
+    }).use(imoocDatav).mount('#app')
   </script>
 </body>
+
 </html>

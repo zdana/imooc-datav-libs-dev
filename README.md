@@ -107,3 +107,45 @@
   ```
 4. tree-shaking机制
 + bulid时没有备用到的代码都不会被打包
+5. package.json文件修改
++ main行修改：
+  ```
+  "main": "dist/imooc.datav.js", 
+  ```
++ 新增files:表示上传npm后所需要包含的文件
+  ```
+  "files":[
+    "dist","src"
+  ],
+  ```
++ 修改keywords:表示上传后组件的关键词
+  ```
+  "keywords":[
+    "vue","imooc"
+  ],
+  ```
++ 终端运行 npm link
+  + 如果出现报错则删除node_modules之后运行npm link
+  + 作用是生成一个node_module，之后在本地项目中可以直接引用
+  + 因为没有发布到npm上，因此若其他项目需要安装不可通过npm
+  + 安装方式：npm link imooc-datav-libs-dev
+  + 安装完后，终端会输出该模块的本地地址
+
++ 其他模块调用上一条link的模块
+  + 在package.json中写入该模块
+  + 控制台npm link 模块名称
+  + 启动项目
+  + main.js中导入该模块
+    ```
+      import datav from 'imooc-datav-libs-dev'
+      createApp(App).use(router).use(store).use(datav).mount('#app')
+    ```
+  + 可能出现eslint报错
+    + 组件中安装eslint
+    + 控制台输入 .node_modules/.bin/eslint --init
+      + 选择 to check syntax only
+      + javascript modules
+      + vue.js
+      + no
+      + browser
+      + javascript

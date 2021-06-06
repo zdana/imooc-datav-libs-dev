@@ -9,8 +9,8 @@ const vue = require('rollup-plugin-vue')
 const postcss = require('rollup-plugin-postcss')
 // 输入路径和输出路径，__dirname表示当前目录路径
 const inputPath = path.resolve(__dirname, './src/index.js')
-const outputUmdPath = path.resolve(__dirname, './dist/imooc.datav.js')
-const outputEsPath = path.resolve(__dirname, './dist/imooc.datav.es.js')
+const outputUmdPath = path.resolve(__dirname, './dist/imooc.datav.min.js')
+const outputEsPath = path.resolve(__dirname, './dist/imooc.datav.es.min.js')
 module.exports = {
   input: inputPath,
   // output一次性输出多个模块使用数组对象，若为1个则用对象
@@ -46,6 +46,6 @@ module.exports = {
   // 模块为外部变量进行引用,也就是在bulid时以外部模块的形式导入
   // 打包时代码不会一起打包进去
   external: [
-    'sam-test-data'
+    'vue'
   ]
 }

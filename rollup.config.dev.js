@@ -1,9 +1,9 @@
 // 使用node中的path包
 const path = require('path')
-const resolve = require('rollup-plugin-node-resolve')
-const commonjs = require('rollup-plugin-commonjs')
-const babel = require('rollup-plugin-babel')
-const json = require('rollup-plugin-json')
+const resolve = require('rollup-plugin-node-resolve')//解决依赖安装的问题
+const commonjs = require('rollup-plugin-commonjs')//允许使用commonjs语法
+const babel = require('rollup-plugin-babel')//兼容低版本浏览器
+const json = require('rollup-plugin-json')//bulid时允许打包json
 const vue = require('rollup-plugin-vue')
 const postcss = require('rollup-plugin-postcss')
 // 输入路径和输出路径，__dirname表示当前目录路径
@@ -19,13 +19,13 @@ module.exports = {
     format: 'umd',
     name: 'imoocDatav',
     globals: {
-      'vue': 'vue'
+      vue: 'vue'
     }
   }, {
     file: outputEsPath,
     format: 'es',
     globals: {
-      'vue': 'vue'
+      vue: 'vue'
     }
   }],
   plugins: [
@@ -44,6 +44,6 @@ module.exports = {
   // 模块为外部变量进行引用,也就是在bulid时以外部模块的形式导入
   // 打包时代码不会一起打包进去
   external: [
-    'sam-test-data'
+    'vue'
   ]
 }
